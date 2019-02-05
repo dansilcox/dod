@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  proxyUrl: 'https://corsproxy.test.parknowportal.com/',
+  proxyUrl: '', // https://corsproxy.test.parknowportal.com/',
   yesNoApiUrl: 'https://yesno.wtf/api'
 };
 
