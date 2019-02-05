@@ -11,7 +11,7 @@ import {BehaviorSubject} from 'rxjs';
 export class AppComponent implements OnInit  {
     points: Points;
     fredSays: string;
-    fredSays$ = new BehaviorSubject<string>();
+    fredSays$ = new BehaviorSubject<string>('');
     private fredsSayings: string[] = [
         'The thing is',
         'Basically',
