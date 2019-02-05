@@ -12,9 +12,18 @@
 
 <div class="clearfix"></div>
 
-<div>
+<div class="float">
     <h2>Story Points Calculator</h2>
 
     <button (click)="calculatePoints()">Calculate points!</button>
     <h3>{{ points }}</h3>
 </div>
+
+<div class="float">
+    <h2>What does Fred think??</h2>
+
+    <button (click)="askFred()">Ask Fred!</button>
+    <p *ngIf="fredSays$ | async as fredSays">{{ fredSays }}...</p>
+</div>
+
+<div class="clearfix"></div>
