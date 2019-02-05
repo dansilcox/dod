@@ -1,9 +1,10 @@
-<button (click)="getAnswer()">{{ btnText }}</button>
+<button (click)="getAnswer()" class="btn btn-primary">{{ btnText }}</button>
 <div *ngIf="answer$ | async as answer">
   <h3 class="{{ answer.answer }}">{{ answer.answer | uppercase }}</h3>
-  <h3 *ngIf="answer.answer === 'yes'">SHIP IT!</h3>
 
   <p *ngIf="answer.forced">Forced!</p>
 
-  <img src="{{ answer.image }}" alt="{{ answer.answer }}">
+  <img src="{{ answer.image }}" alt="{{ answer.answer }}" height="200">
+
+  <h3 *ngIf="answer.answer === 'yes'">SHIP IT!</h3>
 </div>

@@ -1,29 +1,40 @@
 <h1>Agile Tools</h1>
 
-<div class="float">
+<div class="row">
+<div class="col">
     <h2>Definition of Ready</h2>
     <app-answer [btnText]="'Does the story meet the Definition of Ready?'"></app-answer>
 </div>
 
-<div class="float">
+<div class="col">
     <h2>Definition of Done</h2>
     <app-answer [btnText]="'Does the story meet the Definition of Done?'"></app-answer>
 </div>
 
-<div class="clearfix"></div>
+</div>
 
-<div class="float">
+<br>
+
+<div class="row">
+
+<div class="col">
     <h2>Story Points Calculator</h2>
 
-    <button (click)="calculatePoints()">Calculate points!</button>
-    <h3>{{ points }}</h3>
+    <button (click)="calculatePoints()" class="btn btn-primary">Calculate points!</button>
+    <h1 class="text-center">{{ points }}</h1>
 </div>
 
-<div class="float">
+<div class="col">
     <h2>What does Fred think??</h2>
 
-    <button (click)="askFred()">Ask Fred!</button>
-    <p *ngIf="fredSays$ | async as fredSays">{{ fredSays }}...</p>
+    <button (click)="askFred()" class="btn btn-primary">Ask Fred!</button>
+    
+    <br>
+
+    <blockquote class="blockquote" *ngIf="fredSays$ | async as fredSays">{{ fredSays }}...</blockquote>
+</div>
 </div>
 
-<div class="clearfix"></div>
+<footer>
+    <p>&copy; 2019 <a href="/">ship-it.xyz</a></p>
+</footer>
