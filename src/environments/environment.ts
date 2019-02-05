@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  proxyUrl: 'https://corsproxy.test.parknowportal.com/',
+  yesNoApiUrl: 'https://yesno.wtf/api'
 };
 
 /*

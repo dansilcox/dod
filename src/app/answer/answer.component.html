@@ -1,0 +1,8 @@
+<button (click)="getAnswer()">{{ btnText }}</button>
+<div *ngIf="answer$ | async as answer">
+  <h3>{{ answer.answer | uppercase }}</h3>
+
+  <p *ngIf="answer.forced">Forced!</p>
+
+  <img src="{{ answer.image }}" alt="{{ answer.answer }}">
+</div>
