@@ -1,4 +1,7 @@
-# Dod
+# Agile Tools!
+
+Various tools for use in long agile meetings when trying to assess if a story meets the definition of done, definition of ready, etc.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
