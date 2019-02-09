@@ -39,6 +39,22 @@ export class AppComponent implements OnInit  {
         this.fredSays$.next(this.fredSays);
     }
 
+    shipIt() {
+        const audio = new Audio();
+        const folder = 'assets/ship-it-audio/';
+        const filenames = [
+            'English.mp3',
+            'Dutch.mp3',
+            'Hindi.mp3'
+        ];
+        
+        const filename = filenames[this.getRandomInt(0, filenames.length)];
+
+        audio.src = folder + filename;
+        audio.load();
+        audio.play();
+    }
+
     calculatePoints() {
         const enumValues = Object.keys(Points)
             .map(n => Number.parseInt(n, 10))
