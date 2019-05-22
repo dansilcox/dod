@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Points} from './points';
 import {BehaviorSubject} from 'rxjs';
+import {CorpBsService} from './corp-bs.service';
 
 @Component({
   selector: 'app-root',
@@ -30,13 +31,24 @@ export class AppComponent implements OnInit  {
         'Considering'
     ];
 
+    constructor(private _corpBs: CorpBsService) {
+    }
+
     ngOnInit() {
         this.askFred();
     }
 
     askFred() {
-        this.fredSays = this.fredsSayings[this.getRandomInt(0, this.fredsSayings.length)];
-        this.fredSays$.next(this.fredSays);
+        this._corpBs.getPhrase()
+            .subscribe(
+                (phrase: string) => {
+                    this.fredSays = this.fredsSayings[this.getRandomInt(0, this.fredsSayings.length)];
+                    this.fredSays$.next(this.fredSays + ': ' + phrase);
+                },
+                (error) => {
+                    console.error(error);
+                }
+            );
     }
 
     shipIt() {
